@@ -1,14 +1,80 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Ionic Blank
+      Ebani Survey
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+  <ion-slides>
+    
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/imgs/eLogo.png" padding-bottom />
+          <h3 ion-text text-left>
+            Thank you for participating in Ebani Advertising's Contact Centre Satisfaction survey.
+            Your Feedback is valuable and it will help us improve our service quality we deliver to you.
+          </h3>
+
+          <ion-item>
+            <ion-label floating>Client Name</ion-label>
+            <ion-select [(ngModel)]="cname">
+              <ion-option value="Ucchvas">Ucchvas</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Serviced by </ion-label>
+            <ion-select [(ngModel)]="bdname">
+              <ion-option value="Ashitha">Ashitha</ion-option>
+              <ion-option value="Pranathi">Pranathi</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <button ion-button round margin-top (click)="gtNext()">Continue</button>
+
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title text-left>
+            Relating to your interactions with us through the year, how likely are you to recommend Ebani Advertising
+            to
+            others?
+          </ion-card-title>
+          <p ion-text text-left padding-bottom>
+            (Please rate from 0 to 10, 0 being the highly unlikely and 10 being highly likely)
+          </p>
+          {{scndLevel}}
+          <ion-item> 
+          <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="scndLevel">
+            <ion-icon range-left name="md-sad"></ion-icon>
+            <ion-icon range-right name="md-happy"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+          <h3 ion-text text-left margin-vertical>
+            What is the primary reason for the score that you gave us?
+          </h3>
+          <ion-textarea placeholder="Leave you comments here..." padding-bottom [(ngModel)]="scndDes"></ion-textarea>
+
+          <button ion-button round margin-top (click)="gtNext()">Continue</button>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+
+
+
+  </ion-slides>
+
+
 </ion-content>
