@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController, ToastController, LoadingController } from 'ionic-angular';
+import { NavController, ToastController, LoadingController, Platform } from 'ionic-angular';
 import * as firebase from 'firebase';
 import { ThanksPage } from '../thanks/thanks';
 import { Slides } from 'ionic-angular';
@@ -28,11 +28,21 @@ export class HomePage {
   s4Rate1: string;
   s4Rate2: string;
 
+  plat : string = "Unknown";
+
   constructor(
     public navCtrl: NavController,
     public toastCtrl: ToastController,
+    public plt : Platform,
     public loadingCtrl : LoadingController,
   ) {
+    if(this.plt.is('core')){
+      this.plat = "Desktop";
+    }
+    if(this.plt.is('mobileweb')){
+      this.plat = "Mobile";
+    }
+    console.log(this.plat);
   }
 
   ionViewDidEnter() {
@@ -116,6 +126,7 @@ export class HomePage {
       Q7 : this.s3Rate3,
       Q8 : this.s4Rate1,
       Q9 : this.s4Rate2,
+      Platform : this.plat,
       TimeStamp : moment().format()
     }).then(()=>{
       loading.dismiss();
