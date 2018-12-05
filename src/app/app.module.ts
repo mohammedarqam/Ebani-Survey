@@ -12,12 +12,12 @@ import { ThanksPage } from '../pages/thanks/thanks';
 
 
 export const firebaseCred = {
-  apiKey: "AIzaSyD_YDbb3sjzzqVc-N1cWBbWi9lJKYImzkQ",
-  authDomain: "samatha-app.firebaseapp.com",
-  databaseURL: "https://samatha-app.firebaseio.com",
-  projectId: "samatha-app",
-  storageBucket: "samatha-app.appspot.com",
-  messagingSenderId: "1080627282737"
+  apiKey: "AIzaSyDCES9tQHEU81poCBxTkcxOHe7ENgEUDhM",
+  authDomain: "ebani-survey.firebaseapp.com",
+  databaseURL: "https://ebani-survey.firebaseio.com",
+  projectId: "ebani-survey",
+  storageBucket: "",
+  messagingSenderId: "803503781446"
 };
 firebase.initializeApp(firebaseCred);
 
@@ -31,7 +31,9 @@ firebase.initializeApp(firebaseCred);
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      scrollAssist: false
+    }),
     AngularFireModule.initializeApp(firebaseCred),
     AngularFireDatabaseModule,
   ],
@@ -44,7 +46,7 @@ firebase.initializeApp(firebaseCred);
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

@@ -23,6 +23,19 @@
             <ion-label floating>Client Name</ion-label>
             <ion-select [(ngModel)]="cname">
               <ion-option value="Ucchvas">Ucchvas</ion-option>
+              <ion-option value="KRIS GETHIN GYM">KRIS GETHIN GYM</ion-option>
+              <ion-option value="ANDROLIFE">ANDROLIFE</ion-option>
+              <ion-option value="FERTILITY FREEZE">FERTILITY FREEZE</ion-option>
+              <ion-option value="ARTis">ARTis</ion-option>
+              <ion-option value="TSACS">TSACS</ion-option>
+              <ion-option value="UNICEF">UNICEF</ion-option>
+              <ion-option value="Lanco Hills">Lanco Hills</ion-option>
+              <ion-option value="Telangana Spicy Kitchen">Telangana Spicy Kitchen</ion-option>
+              <ion-option value="Samatha App">Samatha App</ion-option>
+              <ion-option value="AIG Hospital">AIG Hospital</ion-option>
+              <ion-option value="Meghavi">Meghavi</ion-option>
+              <ion-option value="Sutherland">Sutherland</ion-option>
+              <ion-option value="Swacch Bharat Mission - Gadwal">Swacch Bharat Mission - Gadwal</ion-option>
             </ion-select>
           </ion-item>
 
@@ -34,7 +47,7 @@
             </ion-select>
           </ion-item>
 
-          <button ion-button round margin-top (click)="gtNext()">Continue</button>
+          <button ion-button round margin-top (click)="checkSlide0()">Continue</button>
 
 
         </ion-card-content>
@@ -54,7 +67,7 @@
           </p>
           {{scndLevel}}
           <ion-item> 
-          <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="scndLevel">
+          <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s1Rate">
             <ion-icon range-left name="md-sad"></ion-icon>
             <ion-icon range-right name="md-happy"></ion-icon>
           </ion-range>
@@ -63,14 +76,119 @@
           <h3 ion-text text-left margin-vertical>
             What is the primary reason for the score that you gave us?
           </h3>
-          <ion-textarea placeholder="Leave you comments here..." padding-bottom [(ngModel)]="scndDes"></ion-textarea>
+          <ion-textarea placeholder="Leave you comments here..." padding-bottom [(ngModel)]="s1Comm"></ion-textarea>
 
-          <button ion-button round margin-top (click)="gtNext()">Continue</button>
+          <button ion-button round margin-top (click)="checkSlide1()">Continue</button>
 
         </ion-card-content>
       </ion-card>
     </ion-slide>
 
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <ion-card-title text-left>
+            Please rate how satisfied you were with our Customer Service Manager on the following attributes”
+          </ion-card-title>
+          <h3 ion-text text-left padding-bottom>
+            Knowledge of your Brand/Business Requirements
+          </h3>
+          {{s2Rate1}}
+          <ion-item> 
+          <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s2Rate1">
+            <ion-icon range-left name="md-sad"></ion-icon>
+            <ion-icon range-right name="md-happy"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+        <h3 ion-text text-left padding-bottom>
+          Strategy Guidance and Support
+        </h3>
+        {{s2Rate2}}
+        <ion-item> 
+        <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s2Rate2">
+          <ion-icon range-left name="md-sad"></ion-icon>
+          <ion-icon range-right name="md-happy"></ion-icon>
+        </ion-range>
+      </ion-item>
+
+      <button ion-button round margin-top (click)="checkSlide2()">Continue</button>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <h3 ion-text text-left padding-bottom>
+            Timely revert to your design needs
+          </h3>
+          {{s3Rate1}}
+          <ion-item> 
+          <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s3Rate1">
+            <ion-icon range-left name="md-sad"></ion-icon>
+            <ion-icon range-right name="md-happy"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+        <h3 ion-text text-left padding-bottom>
+          Timely delivery of your product needs
+        </h3>
+        {{s3Rate2}}
+        <ion-item> 
+        <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s3Rate2">
+          <ion-icon range-left name="md-sad"></ion-icon>
+          <ion-icon range-right name="md-happy"></ion-icon>
+        </ion-range>
+      </ion-item>
+      <h3 ion-text text-left padding-bottom>
+        Communicated Clearly and Curteously
+      </h3>
+      {{s3Rate3}}
+      <ion-item> 
+      <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s3Rate3">
+        <ion-icon range-left name="md-sad"></ion-icon>
+        <ion-icon range-right name="md-happy"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+      <button ion-button round margin-top (click)="checkSlide3()">Continue</button>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <ion-card-content>
+          <h3 ion-text text-left padding-bottom>
+            Easily Accessible When I Have Issues
+          </h3>
+          {{s4Rate1}}
+          <ion-item> 
+          <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s4Rate1">
+            <ion-icon range-left name="md-sad"></ion-icon>
+            <ion-icon range-right name="md-happy"></ion-icon>
+          </ion-range>
+        </ion-item>
+
+        <h3 ion-text text-left padding-bottom>
+          Your overall experience of our relationship
+        </h3>
+        {{s4Rate2}}
+        <ion-item> 
+        <ion-range min="0" max="10" snaps="true" step="1" [(ngModel)]="s4Rate2">
+          <ion-icon range-left name="md-sad"></ion-icon>
+          <ion-icon range-right name="md-happy"></ion-icon>
+        </ion-range>
+      </ion-item>
+
+      <button ion-button round margin-top (click)="checkSlide4()">Continue</button>
+
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
 
 
 
