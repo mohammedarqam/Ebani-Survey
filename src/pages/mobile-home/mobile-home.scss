@@ -1,0 +1,8 @@
+page-mobile-home {
+    ion-select,ion-input,{
+        border-bottom: 1px solid map-get($colors,primary);
+    }
+    ion-textarea{
+        border: 1px solid map-get($colors,primary);
+    }
+}

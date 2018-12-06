@@ -9,6 +9,8 @@ import * as firebase from 'firebase';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { ThanksPage } from '../pages/thanks/thanks';
+import { MobileHomePage } from '../pages/mobile-home/mobile-home';
+import { MobileThanksPage } from '../pages/mobile-thanks/mobile-thanks';
 
 
 export const firebaseCred = {
@@ -28,6 +30,8 @@ firebase.initializeApp(firebaseCred);
     MyApp,
     HomePage,
     ThanksPage,
+    MobileHomePage,
+    MobileThanksPage
   ],
   imports: [
     BrowserModule,
@@ -42,6 +46,8 @@ firebase.initializeApp(firebaseCred);
     MyApp,
     HomePage,
     ThanksPage,
+    MobileHomePage,
+    MobileThanksPage
   ],
   providers: [
     StatusBar,
